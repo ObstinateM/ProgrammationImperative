@@ -27,6 +27,8 @@ public void draw() {
     if (mousePressed == true) {
         println("vertex(" + mouseX + ", " + mouseY + ");");
         delay(100);
+        text(mouseX,30,30);
+        text(mouseY,30,50);
     }
 
     // Img display
