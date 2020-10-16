@@ -178,7 +178,7 @@ void affiche() {
 
 // VII.1
 
-int compteur;
+float compteur;
 float secondes;
 
 void setup(){
@@ -186,11 +186,19 @@ void setup(){
 }
 
 void draw(){
+    String msg;
+    int m = millis();
+    int vary = 100;
     background(128);
     compteur += 1;
-    secondes = compteur/frameRate;
-    text("Temps écoulé depuis le début du programme : ", compteur, 25, 250);
+    secondes = compteur/m*100;
+    println(compteur, secondes);
+    if (mousePressed){
+        text("Temps inter" + secondes, 50, vary);
+        vary += 10;
+    }
+    msg = "Temps écoulé depuis le début du programme : " + secondes;
+    text(msg, 50, 50);
 }
-
 
 
